@@ -1,2 +1,175 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Renewal Overview — Savings vs. Spend (v3)</title></head><body><h1>Renewal Summary v3</h1><p>This is a minimal placeholder. Please use the earlier v3 HTML export if styling is required.</p></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Renewal Overview — Savings vs. Spend (v3)</title>
+<style>
+  :root {
+    --bg: #0a0f1d;
+    --panel: #0f1630;
+    --panel-2: #121b3d;
+    --border: rgba(122,162,255,0.25);
+    --text: #eaf0ff;
+    --muted: #a9b8ff;
+    --accent: #8fb1ff;
+    --savings: #2ecc71;
+    --cost: #ff7a7a;
+    --note: #ffd166;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 28px; background: radial-gradient(1200px 600px at 10% 0%, rgba(127, 166, 255, .08), transparent 50%), var(--bg); color: var(--text);
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    line-height: 1.55; font-size: 15px;
+  }
+  .container { max-width: 1140px; margin: 0 auto; }
+  h1 { font-size: 28px; margin: 0 0 10px; font-weight: 800; letter-spacing: .2px; }
+  h2 { font-size: 18px; margin: 22px 0 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
+  .card {
+    background: linear-gradient(180deg, var(--panel), var(--panel-2));
+    border: 1px solid var(--border); border-radius: 16px; padding: 14px 14px 10px; margin: 14px 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,.25);
+  }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px; }
+  .stat {
+    background: rgba(143,177,255,.06); border: 1px solid var(--border); border-radius: 12px; padding: 12px;
+  }
+  .stat .label { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .06em; }
+  .stat .value { font-size: 20px; font-weight: 800; margin-top: 4px; }
+  .stat.savings .value { color: var(--savings); }
+  .stat.costs .value { color: var(--cost); }
+  table { width: 100%; border-collapse: collapse; border-radius: 12px; overflow: hidden; }
+  th, td { padding: 10px 8px; border-bottom: 1px solid rgba(122,162,255,0.15); vertical-align: top; }
+  th { text-align: left; color: var(--muted); font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: .06em; }
+  tr:last-child td { border-bottom: 0; }
+  .right { text-align: right; }
+  .total-row td { font-weight: 800; }
+  .pill { display: inline-block; padding: 2px 8px; border-radius: 999px; background: rgba(143,177,255,.12); color: var(--accent); font-weight: 700; font-size: 12px; }
+  .note { color: var(--note); font-size: 12px; margin-top: 6px; }
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 820px) { .split { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Renewal Overview — Savings vs. Spend</h1>
+
+    <div class="card">
+      <div class="grid">
+        <div class="stat savings">
+          <div class="label">Annual Savings — Complimentary Value</div>
+          <div class="value">$52,360</div>
+          <div class="label">APEX ($40,800) + New Homes Connect ($3,600) + Complimentary Boosted Listings ($7,960)</div>
+        </div>
+        <div class="stat costs">
+          <div class="label">Annual Spend — Connect (Renewal on Monthly Terms)</div>
+          <div class="value">$123,480</div>
+          <div class="label">Alternative: Prepaid Annual $113,005 <span class="pill">Save $10,475</span></div>
+        </div>
+      </div>
+    </div>
+
+    <h2>Paid — Connect (Location Detail)</h2>
+    <div class="card">
+      <table>
+        <thead>
+          <tr>
+            <th>Location</th>
+            <th class="right">Current Rate</th>
+            <th class="right">Renewal Price</th>
+            <th class="right">Δ / mo</th>
+            <th class="right">Yearly Current</th>
+            <th class="right">Yearly Renewal</th>
+            <th class="right">Prepaid (Annual)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Coquitlam East</td><td class="right">$700</td><td class="right">$735</td><td class="right">+$35</td><td class="right">$8,400</td><td class="right">$8,820</td><td class="right">$8,085</td></tr>
+          <tr><td>Coquitlam West</td><td class="right">$750</td><td class="right">$825</td><td class="right">+$75</td><td class="right">$9,000</td><td class="right">$9,900</td><td class="right">$9,075</td></tr>
+          <tr><td>Fairview Olympic</td><td class="right">$800</td><td class="right">$880</td><td class="right">+$80</td><td class="right">$9,600</td><td class="right">$10,560</td><td class="right">$9,680</td></tr>
+          <tr><td>Yaletown</td><td class="right">$1,000</td><td class="right">$1,090</td><td class="right">+$90</td><td class="right">$12,000</td><td class="right">$13,080</td><td class="right">$11,990</td></tr>
+          <tr><td>Coal Harbour Downtown</td><td class="right">$850</td><td class="right">$935</td><td class="right">+$85</td><td class="right">$10,200</td><td class="right">$11,220</td><td class="right">$10,285</td></tr>
+          <tr><td>North Vancouver (Lower Lonsdale & Capilano)</td><td class="right">$1,000</td><td class="right">$1,090</td><td class="right">+$90</td><td class="right">$12,000</td><td class="right">$13,080</td><td class="right">$11,990</td></tr>
+          <tr><td>North Vancouver (Deep Cove)</td><td class="right">$700</td><td class="right">$770</td><td class="right">+$70</td><td class="right">$8,400</td><td class="right">$9,240</td><td class="right">$8,470</td></tr>
+          <tr><td>West Vancouver</td><td class="right">$1,155</td><td class="right">$1,275</td><td class="right">+$120</td><td class="right">$13,860</td><td class="right">$15,300</td><td class="right">$14,025</td></tr>
+          <tr><td>Vancouver West</td><td class="right">$1,045</td><td class="right">$1,205</td><td class="right">+$160</td><td class="right">$12,540</td><td class="right">$14,460</td><td class="right">$13,255</td></tr>
+          <tr><td>West End</td><td class="right">$600</td><td class="right">$660</td><td class="right">+$60</td><td class="right">$7,200</td><td class="right">$7,920</td><td class="right">$7,260</td></tr>
+          <tr><td>Brentwood Park</td><td class="right">$750</td><td class="right">$825</td><td class="right">+$75</td><td class="right">$9,000</td><td class="right">$9,900</td><td class="right">$9,075</td></tr>
+          <tr class="total-row"><td>Total</td><td class="right">$9,350/mo</td><td class="right">$10,290/mo</td><td class="right">+$940</td><td class="right">$112,200/yr</td><td class="right">$123,480/yr</td><td class="right">$113,005/yr</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Paid — Unlimited ONE Membership</h2>
+    <div class="card">
+      <div class="split">
+        <div class="stat costs">
+          <div class="label">Monthly</div>
+          <div class="value">$99/mo</div>
+        </div>
+        <div class="stat costs">
+          <div class="label">Annual</div>
+          <div class="value">$1,188/yr</div>
+        </div>
+      </div>
+    </div>
+
+    <h2>Complimentary — APEX (Savings)</h2>
+    <div class="card">
+      <table>
+        <thead><tr><th>Area</th><th class="right">Monthly Value</th></tr></thead>
+        <tbody>
+          <tr><td>Vancouver Downtown</td><td class="right">$600</td></tr>
+          <tr><td>North Vancouver</td><td class="right">$950</td></tr>
+          <tr><td>West Vancouver</td><td class="right">$800</td></tr>
+          <tr><td>Coquitlam East</td><td class="right">$525</td></tr>
+          <tr><td>Coquitlam West</td><td class="right">$525</td></tr>
+          <tr class="total-row"><td>Total Monthly Value</td><td class="right">$3,400/mo</td></tr>
+          <tr class="total-row"><td>Total Annual Value</td><td class="right">$40,800/yr</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Complimentary — New Homes Connect (Savings)</h2>
+    <div class="card">
+      <table>
+        <thead><tr><th>Area</th><th class="right">Monthly Value</th></tr></thead>
+        <tbody>
+          <tr><td>Burnaby</td><td class="right">$50</td></tr>
+          <tr><td>Coquitlam</td><td class="right">$50</td></tr>
+          <tr><td>North Vancouver</td><td class="right">$50</td></tr>
+          <tr><td>Port Moody</td><td class="right">$50</td></tr>
+          <tr><td>Vancouver</td><td class="right">$50</td></tr>
+          <tr><td>West Vancouver</td><td class="right">$50</td></tr>
+          <tr class="total-row"><td>Total Monthly Value</td><td class="right">$300/mo</td></tr>
+          <tr class="total-row"><td>Total Annual Value</td><td class="right">$3,600/yr</td></tr>
+        </tbody>
+      </table>
+      <div class="note">Product note: New Homes Connect is likely to be revised heading into 2026.</div>
+    </div>
+
+    <h2>Complimentary — Boosted Listings (Savings)</h2>
+    <div class="card">
+      <table>
+        <tr><th>Quantity</th><th>Unit</th><th class="right">Annual Savings</th></tr>
+        <tr><td>40</td><td>$199</td><td class="right">$7,960</td></tr>
+      </table>
+      <div class="note">Calculated at 40 complimentary listings × $199 each over the prior 12 months.</div>
+    </div>
+
+    <div class="card">
+      <div class="grid">
+        <div class="stat savings">
+          <div class="label">Annual Savings — Complimentary Value</div>
+          <div class="value">$52,360</div>
+        </div>
+        <div class="stat costs">
+          <div class="label">Annual Spend — Connect (Monthly Terms)</div>
+          <div class="value">$123,480</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
